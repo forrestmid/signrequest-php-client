@@ -1180,11 +1180,6 @@ class Signer implements ModelInterface, ArrayAccess
      */
     public function setForwardedReason($forwarded_reason)
     {
-
-        if (!is_null($forwarded_reason) && (mb_strlen($forwarded_reason) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $forwarded_reason when calling Signer., must be bigger than or equal to 1.');
-        }
-
         $this->container['forwarded_reason'] = $forwarded_reason;
 
         return $this;
